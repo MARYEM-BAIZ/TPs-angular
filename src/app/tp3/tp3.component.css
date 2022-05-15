@@ -1,0 +1,23 @@
+.title {
+  text-align: center;
+}
+
+table tr td {
+  border: solid black 1px;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.cyan {
+  color: cyan;
+}
+
+.brown {
+  color: brown;
+}

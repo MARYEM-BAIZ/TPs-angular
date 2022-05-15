@@ -1,0 +1,36 @@
+  <p class="title">Interpolation</p>
+  <p>1- Affichage du nom et prénom</p>
+  <ul>
+    <li>Prénom : {{ personne.prenom }}</li>
+    <li>Nom : {{ personne.nom }}</li>
+  </ul>
+
+  <br>
+
+  <p>2- Affichage du tableau</p>
+  <table>
+    <tr>
+      <td>{{ tab[0] }}</td>
+      <td>{{ tab[1] }}</td>
+      <td>{{ tab[2] }}</td>
+      <td>{{ tab[3] }}</td>
+    </tr>
+  </table>
+
+  <br>
+
+  <p>3- Display a function</p>
+  <p>{{ direBonjour() }}</p>
+
+  <p class="title">Property Binding</p>
+  <label for="">La valeur d'imput est :</label>
+  <input type="text" value="{{ value }}">
+
+  <p class="title">Event-Based Binding</p>
+  <input type="button" value="cliquer" (click)="AfficherAlert()">
+
+  <p class="title">Two Way Template</p>
+  <label for="">Veuillez tapez votre prénom</label>
+  <input type="text" [(ngModel)]="value1" >
+  <br>
+  <p>Le prénom saisi est {{ value1 }}</p>

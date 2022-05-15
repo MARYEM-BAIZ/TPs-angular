@@ -1,0 +1,64 @@
+<!-- Template Driven Form -->
+<p class="title">Template Driven Form</p>
+
+<form #signupForm="ngForm" (ngSubmit)="enregistrerUtilisateur(signupForm)">
+
+  <label>User Name</label>
+  <input type="text" name="username" [(ngModel)]="username" required>
+
+  <label>Email</label>
+  <input type="email" name="email" [(ngModel)]="email" required>
+
+  <label>Email</label>
+  <input type="password" name="password" [(ngModel)]="password" required>
+
+  <button type="submit">Enregistrer</button>
+
+</form>
+
+<div *ngIf="affichageMessage">
+  <h3>Merci {{ formData.username }} pour votre enregistrement</h3>
+</div>
+
+<br>
+<hr>
+<br>
+
+<!-- Model Drive Form ou bien Reactive Form -->
+<p class="title">Model Drive Form ou bien Reactive Form</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="enregistrerUtilisateur1()">
+
+  <label >Username</label>
+  <input type="text" name="username1" [formControl]="username1">
+  <div [hidden]="username1.valid || username1.untouched" class="error">
+    <div [hidden]="!username1.hasError('minlength')">
+      username can't be shorter than 5 characters.
+    </div>
+
+    <div [hidden]="!username1.hasError('required')">
+      username is required.
+    </div>
+  </div>
+
+  <label >Password</label>
+  <input type="password" name="password1" [formControl]="password1">
+  <div [hidden]="password1.valid || password1.untouched" class="error">
+    <div [hidden]="!password1.hasError('required')">
+      The password is required.
+    </div>
+
+    <div [hidden]="!username1.hasError('needsExclamation')">
+      Your password must have an exclamation mark!
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!loginForm.valid">Log In</button>
+
+</form>
+
+<div *ngIf="affichageMessage1">
+  <h3>Thanks {{ formData1.username1 }} for your registration</h3>
+</div>
+
+

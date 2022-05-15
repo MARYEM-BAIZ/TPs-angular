@@ -1,0 +1,87 @@
+<p class="title">Directive *ngIf</p>
+
+<table>
+  <tr>
+    <td>19</td>
+    <td>19.5</td>
+    <td>19.75</td>
+    <td>20</td>
+  </tr>
+</table>
+
+<p *ngIf="tab[0]%2 !=0 ; else sinon">
+  {{ tab[0] }} est impaire
+</p>
+
+<ng-template #sinon>
+  <p>{{ tab[0] }} est paire</p>
+</ng-template>
+
+<p class="title">Directive *ngFor</p>
+
+<table>
+  <tr>
+    <td>19</td>
+    <td>19.5</td>
+    <td>19.75</td>
+    <td>20</td>
+  </tr>
+</table>
+
+<ul>
+  <li *ngFor="let value of tab">
+    {{ value }}
+  </li>
+</ul>
+
+<p class="title">Directive *ngSwitch</p>
+
+<ul>
+  <ng-container *ngFor="let elt of numbers">
+  <ng-container [ngSwitch]="true">
+    <li *ngSwitchCase="elt>=0 && elt<12">
+      redoublé
+    </li>
+
+    <li *ngSwitchCase="elt>=12 && elt<14">
+      passable
+    </li>
+
+    <li *ngSwitchCase="elt>=14 && elt<16">
+      bien
+    </li>
+
+    <li *ngSwitchCase="elt>=16 && elt<18">
+      trés bien
+    </li>
+
+    <li *ngSwitchDefault="">
+      excellent
+    </li>
+  </ng-container>
+  </ng-container>
+</ul>
+
+<p class="title">Directive ngClass et ngStyle</p>
+
+<p [class.red]="true">colored in red</p>
+
+<p [ngClass]="{'blue':true}">changing color using ngClass</p>
+
+<p [ngStyle]="{'color':'green'}">changing color using ngStyle</p>
+
+<br>
+
+<p [class.cyan]="AfficheColor">changing color using a function</p>
+
+<p [ngClass]="{'brown':AfficheColor}">changing color using ngClass</p>
+
+<input type="button" value="change color" (click)="changeColor()">
+
+<br>
+
+<p [class.cyan]="AfficheColor">changing color using a function</p>
+
+<p [ngClass]="{'cyan':AfficheColor, 'red': !AfficheColor}">changing color using ngClass</p>
+
+

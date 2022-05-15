@@ -1,0 +1,65 @@
+<!-- Service Basique  -->
+<p class="title">Service Basique</p>
+
+<!-- Student Form -->
+<h2>Student Form</h2>
+
+<table>
+
+  <tr>
+    <td>Nom D'étudiant</td>
+    <td>
+      <input type="text" [(ngModel)]="emodel.nom">
+    </td>
+  </tr>
+
+  <tr>
+    <td>Prénom D'étudiant</td>
+    <td>
+      <input type="text" [(ngModel)]="emodel.prenom">
+    </td>
+  </tr>
+
+  <tr>
+    <td>Ville</td>
+    <td>
+      <input type="text" [(ngModel)]="emodel.ville">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <input type="button" value="Submit" (click)="submit()">
+
+      <input type="button" value="Reset" (click)="reset()">
+    </td>
+  </tr>
+
+</table>
+
+<!-- Détails D'étudiant -->
+<h3>Détails D'étudiant</h3>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom d'étudiant</th>
+
+        <th>Prénom d'étudiant</th>
+
+        <th>Ville</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of esource; let i=index">
+        <td>{{ item.nom }}</td>
+
+        <td>{{ item.prenom }}</td>
+
+        <td>{{ item.ville }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

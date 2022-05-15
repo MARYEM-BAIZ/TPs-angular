@@ -1,0 +1,25 @@
+.app{
+  display: flex;
+  flex-direction: row;
+}
+.sidebarr{
+  width: 40%;
+}
+.sidebarr a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(5, 68, 104);
+  padding: 10px;
+  margin-bottom: 7px;
+  border-radius: 7px;
+  text-align: center;
+}
+.contentt{
+  width: 100%;
+}
+h2 {
+  text-align: center;
+  color: rgb(5, 68, 104);
+  margin-bottom: 30px;
+}

@@ -1,0 +1,33 @@
+<p class="title">Les pipes basiques: Pipes Date</p>
+
+<p>Date complet : {{ dateAujourd }}</p>
+
+<p>Short Date : {{ dateAujourd | date: 'shortDate' }}</p>
+
+<p>Time : {{ dateAujourd | date: 'HH:MM' }}</p>
+
+<p class="title">Les pipes basiques: Pipes Number</p>
+
+<p>Nombre non formaté : {{ nombre }}</p>
+
+<p>Deux nombres décimales aprés virgule : {{ nombre |number: '2.2-2' }}</p>
+
+<p class="title">Les pipes basiques: Pipes Devise</p>
+
+<p>Nombre non formaté : {{ nombre }}</p>
+
+<p>USD Doller($) : {{ nombre |currency:'USD':true}}</p>
+
+<p>USD Doller : {{ nombre |currency:'USD':false}}</p>
+
+<p class="title">Les pipes basiques: Pipes Chaine de caractères</p>
+
+<p>Message brute : {{ message }}</p>
+
+<p>Lettres en majuscule : {{ message | uppercase}}</p>
+
+<p>Lettres en miniscule : {{ message | lowercase}}</p>
+
+<p class="title">Les pipes basiques: Pipes pourcentage</p>
+
+<p>2 place formatting : {{ nombre | percent :'.2'}}</p>
